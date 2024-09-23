@@ -1,8 +1,11 @@
 .container {
   display: flex;
-  width: 100%;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100%; */
   height: 25rem;
-  background: var(--gradient-primary);
+  background: var(--gradient-secondary);
   justify-content: center;
 }
 
@@ -21,9 +24,9 @@
 }
 
 .logo {
-  width: 3rem;
-  height: 3rem;
-  background-image: url("/assets/current-wave-transparent.svg");
+  min-width: 3rem;
+  min-height: 3rem;
+  background-image: url("/assets/current-wave-gradient.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -43,8 +46,57 @@
 
 .cart {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 7rem;
   height: 2rem;
   background: var(--gradient-primary);
   border-radius: 1rem;
+  box-sizing: border-box;
+  transition: background 0.3s, border 0.3s;
+  cursor: pointer;
+}
+
+.cart:hover {
+  background: var(--white-primary);
+  border: 1px solid black;
+}
+
+.cart i {
+  font-size: 1rem;
+  color: var(--white-primary);
+  transition: color 0.3s;
+}
+
+.cart:hover i {
+  color: black;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-secondary {
+  max-width: 22rem;
+  max-height: 22rem;
+  width: 22rem;
+  height: 22rem;
+  background-image: url("/assets/current-wave-white.svg");
+  background-repeat: no-repeat;
+  color: var(--white-primary);
+}
+
+.slogan {
+  font-size: 1.2rem;
+  width: 30rem;
+  padding: 1.5rem;
+  font-family: "Gotham Black", sans-serif;
+  color: var(--white-primary);
+  user-select: none;
+  cursor: default;
+  /* border-radius: 2rem;
+  background-color: var(--white-primary-alpha); */
 }

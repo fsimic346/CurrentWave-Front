@@ -1,6 +1,13 @@
 :root {
   --gradient-primary: linear-gradient(to right, #25deff, #81b7ff);
+  --gradient-secondary: linear-gradient(
+    to right,
+    #6fc2e4 0%,
+    #44bbed 63%,
+    #0cb3f8 100%
+  );
   --white-primary: #fafafa;
+  --white-primary-alpha: rgba(250, 250, 250, 0.3);
 }
 
 body {
