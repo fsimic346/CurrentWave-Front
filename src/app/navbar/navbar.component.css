@@ -1,12 +1,13 @@
 .container {
+  position: relative;
   display: flex;
   padding: 2rem;
   flex-direction: column;
   align-items: center;
-  /* width: 100%; */
   height: 25rem;
   background: var(--gradient-secondary);
   justify-content: center;
+  overflow: hidden;
 }
 
 .white-bar {
@@ -21,6 +22,8 @@
   border: 1px solid rgba(var(--clr-outline), 0.5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
@@ -74,9 +77,10 @@
 
 .content {
   display: flex;
-  justify-content: space-between;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .logo-secondary {
@@ -97,6 +101,34 @@
   color: var(--white-primary);
   user-select: none;
   cursor: default;
-  /* border-radius: 2rem;
-  background-color: var(--white-primary-alpha); */
+}
+
+.left-image-wrapper {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  z-index: 0;
+  top: -10rem;
+  left: -20rem;
+}
+
+.right-image-wrapper {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  z-index: 0;
+  top: -2rem;
+  right: -15rem;
+}
+
+.left-image {
+  width: 60rem;
+  height: 60rem;
+  transform: rotate(-15deg);
+}
+
+.right-image {
+  width: 60rem;
+  height: 60rem;
+  transform: rotate(25deg);
 }
