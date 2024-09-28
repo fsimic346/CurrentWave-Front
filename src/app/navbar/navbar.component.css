@@ -1,6 +1,7 @@
 .container {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   padding: 2rem;
   flex-direction: column;
   align-items: center;
@@ -24,16 +25,17 @@
   border-radius: 2rem;
   position: relative;
   z-index: 2;
+  max-width: min(90rem, 90%);
 }
 
 .white-bar > * {
   flex-basis: 0;
-  flex-grow: 1;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  flex-grow: 0.5;
 }
 
 .logo img {
@@ -45,7 +47,7 @@
   display: flex;
   font-family: "Gotham Black", sans-serif;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: var(--fs-1000);
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -53,6 +55,11 @@
   user-select: none;
   cursor: default;
   justify-content: center;
+  flex-grow: 2;
+}
+
+.cart {
+  flex-grow: 0.5;
 }
 
 .cart-button {
@@ -115,19 +122,19 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
 .logo-secondary {
   max-width: 22rem;
   max-height: 22rem;
-  width: 22rem;
-  height: 22rem;
   color: var(--white-primary);
+  display: block;
 }
 
 .slogan {
-  font-size: 1.2rem;
-  width: 30rem;
+  font-size: var(--fs-600);
+  max-width: 30rem;
   padding: 1.5rem;
   font-family: "Gotham Black", sans-serif;
   color: var(--white-primary);
@@ -163,4 +170,46 @@
   width: 60rem;
   height: 60rem;
   transform: rotate(25deg);
+}
+
+.hamburger-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 3rem;
+  background-color: var(--white-primary);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+.hamburger-button {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-hamburger img {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .hamburger-bar {
+    display: flex;
+  }
+
+  .white-bar {
+    display: none;
+  }
 }
