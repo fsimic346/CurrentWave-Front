@@ -31,12 +31,9 @@
   flex-grow: 1;
 }
 
-.logo {
-  min-width: 3rem;
-  min-height: 3rem;
-  background-image: url("/assets/current-wave-gradient.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+.logo img {
+  width: 3rem;
+  height: 3rem;
 }
 
 .title {
@@ -120,8 +117,6 @@
   max-height: 22rem;
   width: 22rem;
   height: 22rem;
-  background-image: url("/assets/current-wave-white.svg");
-  background-repeat: no-repeat;
   color: var(--white-primary);
 }
 
