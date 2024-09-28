@@ -1,12 +1,12 @@
-<img class="card" src="assets/apparel/gokupost.jpg" />
+<img class="card" [src]="design.image" />
 <div class="info">
   <div class="row basic-info">
-    <div class="name">Goku (Dragon Ball)</div>
-    <div class="price">RSD1990</div>
+    <div class="name">{{ design.name }}</div>
+    <div class="price">{{ (design.price | currency : "RSD")! }}</div>
   </div>
   <div class="row tags">
-    <div class="tag">Anime</div>
-    <div class="tag">Majica</div>
+    <div class="tag">{{ design.category }}</div>
+    <div class="tag">{{ design.type }}</div>
   </div>
   <div class="row bottom">
     <div class="click">(Click to show more information)</div>

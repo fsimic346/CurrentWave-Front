@@ -1,9 +1,14 @@
 <div class="wrapper">
   <h1 class="title">NAŠI PROIZVODI</h1>
-  <div class="grid">
-    <cw-home-card></cw-home-card>
-    <cw-home-card></cw-home-card>
-    <cw-home-card></cw-home-card>
-    <cw-home-card></cw-home-card>
+  <div class="loader" *ngIf="!contentRendered">Loading...</div>
+  <div class="grid" [class.visible]="contentRendered">
+    <cw-home-card
+      *ngFor="let design of designs; let last = last"
+      [design]="design"
+    >
+      <ng-container *ngIf="last && !contentRendered">{{
+        onContentRendered()
+      }}</ng-container>
+    </cw-home-card>
   </div>
 </div>

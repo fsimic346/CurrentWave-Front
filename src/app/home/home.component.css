@@ -29,7 +29,7 @@
     (100% - var(--total-gap-width)) / var(--grid-column-count)
   );
 
-  display: grid;
+  display: none;
   width: 100%;
   gap: 1rem;
   grid-template-columns: repeat(
@@ -37,4 +37,8 @@
     minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
   );
   justify-content: center;
+}
+
+.visible {
+  display: grid;
 }
