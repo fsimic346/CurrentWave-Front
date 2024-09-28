@@ -1,0 +1,17 @@
+.wrapper {
+  max-width: min(90rem, 90%);
+  margin-inline: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  font-weight: bold;
+  width: max-content;
+  margin-inline: auto;
+}
