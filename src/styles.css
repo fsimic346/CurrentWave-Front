@@ -20,14 +20,14 @@ body {
 
 @font-face {
   font-family: "Gotham Black";
-  src: url("/assets/fonts/GOTHAM-BLACK.OTF") format("opentype");
+  src: url("assets/fonts/GOTHAM-BLACK.OTF") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ASAP Bold";
-  src: url("/assets/fonts/ASAP-BOLD.OTF") format("opentype");
+  src: url("assets/fonts/ASAP-BOLD.OTF") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
