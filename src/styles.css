@@ -9,7 +9,9 @@
   );
   --white-primary: #fafafa;
   --white-primary-alpha: rgba(250, 250, 250, 0.3);
-  --clr-primary: #6fc2e4;
+  --clr-primary: #4dbceb;
+  --clr-primary-700: #7ac8e9;
+  --clr-offwhite: #c0e4f1;
 
   --fs-1000: 2.5rem;
   --fs-800: 2rem;
@@ -17,6 +19,10 @@
   --fs-600: 1.25rem;
   --fs-500: 1.15rem;
   --fs-400: 1rem;
+  --fs-300: 0.85rem;
+
+  --ff-main: "ASAP Bold", sans-serif;
+  --ff-secondary: "Poppins", sans-serif;
 }
 
 @media screen and (max-width: 800px) {
@@ -27,6 +33,7 @@
     --fs-600: 1.1rem;
     --fs-500: 1rem;
     --fs-400: 0.85rem;
+    --fs-300: 0.75rem;
   }
 }
 
@@ -34,6 +41,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gotham Black";
+  background-color: var(--white-primary);
 }
 
 @font-face {
@@ -48,4 +56,10 @@ body {
   src: url("assets/fonts/ASAP-BOLD.OTF") format("opentype");
   font-weight: bold;
   font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

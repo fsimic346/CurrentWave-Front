@@ -1,0 +1,97 @@
+:host {
+  width: 100%;
+  position: relative;
+  transition: 0.2s ease;
+  border-radius: 0.8rem;
+}
+
+:host:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  -webkit-box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.65);
+  box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.65);
+
+  .info {
+    height: max(13rem, 30%);
+    background-color: var(--white-primary);
+  }
+}
+
+.card {
+  border-radius: 0.8rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  height: 0px;
+  background-color: var(--white-primary);
+  width: 100%;
+  border-radius: 0.8rem;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease-in-out;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.name {
+  flex-grow: 1;
+  padding: 5px;
+}
+
+.basic-info {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  margin-top: 2rem;
+}
+
+.price {
+  background: var(--gradient-primary);
+  color: var(--white-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.tags {
+  margin-top: 5px;
+  justify-content: start;
+  gap: 3px;
+  font-family: var(--ff-secondary);
+}
+
+.tag {
+  background-color: var(--clr-primary-700);
+  padding-inline: 8px;
+  padding-block: 2px;
+  border-radius: 1rem;
+  font-size: var(--fs-300);
+  color: var(--white-primary);
+}
+
+.bottom {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.click {
+  color: var(--white-primary-transparent);
+  font-family: var(--ff-secondary);
+  opacity: 0.5;
+  font-size: var(--fs-300);
+}

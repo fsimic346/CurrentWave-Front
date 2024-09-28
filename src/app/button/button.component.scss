@@ -1,0 +1,62 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7rem;
+  height: 2rem;
+  background: var(--gradient-primary);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-left: auto;
+  transition: 0.2s linear;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  position: relative;
+  padding: 1rem;
+  color: var(--white-primary);
+  gap: 1rem;
+}
+
+:host::before {
+  position: absolute;
+  content: "";
+  border-radius: 1rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white-primary);
+  z-index: 2;
+  transition: opacity 0.2s linear;
+  opacity: 0;
+}
+
+:host:hover::before {
+  opacity: 1;
+}
+
+:host:hover {
+  border-color: black;
+
+  i,
+  .text {
+    color: black;
+  }
+}
+
+:host i {
+  font-size: 1rem;
+  color: var(--white-primary);
+  transition: color 0.2s ease-in;
+}
+
+.icon {
+  z-index: 4;
+}
+
+.text {
+  z-index: 4;
+  transition: color 0.2s ease-in;
+}

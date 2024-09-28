@@ -1,6 +1,8 @@
 .wrapper {
   max-width: min(90rem, 90%);
   margin-inline: auto;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
 }
 
 .title {
@@ -14,4 +16,25 @@
   font-weight: bold;
   width: max-content;
   margin-inline: auto;
+}
+
+.grid {
+  --grid-layout-gap: 1rem;
+  --grid-column-count: 3;
+  --grid-item--min-width: 15rem;
+
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
+
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+  justify-content: center;
 }
