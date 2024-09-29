@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Design } from '../../models/design';
 import { ButtonComponent } from '../button/button.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'cw-home-card',

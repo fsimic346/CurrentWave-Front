@@ -34,4 +34,8 @@ export class HomeComponent implements OnInit {
       this.changeDetector.detectChanges();
     }, 0);
   }
+
+  identify(index: number, design: Design) {
+    return design.id;
+  }
 }

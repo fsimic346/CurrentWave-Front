@@ -29,7 +29,7 @@
     (100% - var(--total-gap-width)) / var(--grid-column-count)
   );
 
-  display: none;
+  display: grid;
   width: 100%;
   gap: 1rem;
   grid-template-columns: repeat(

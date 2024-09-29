@@ -1,9 +1,9 @@
 <div class="wrapper">
   <h1 class="title">NAŠI PROIZVODI</h1>
-  <div class="loader" *ngIf="!contentRendered">Loading...</div>
-  <div class="grid" [class.visible]="contentRendered">
+  <!-- <div class="loader" *ngIf="!contentRendered">Loading...</div> -->
+  <div class="grid">
     <cw-home-card
-      *ngFor="let design of designs; let last = last"
+      *ngFor="let design of designs; let last = last; trackBy: identify"
       [design]="design"
     >
       <ng-container *ngIf="last && !contentRendered">{{
