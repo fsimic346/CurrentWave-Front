@@ -3,11 +3,12 @@ import { HomeCardComponent } from '../home-card/home-card.component';
 import { Design } from '../../models/design';
 import { DesignService } from '../design.service';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'cw-home',
   standalone: true,
-  imports: [HomeCardComponent, CommonModule],
+  imports: [HomeCardComponent, CommonModule, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

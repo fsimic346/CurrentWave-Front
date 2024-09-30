@@ -1,0 +1,158 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.white-bar {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+  width: 75%;
+  height: 3.2rem;
+  background: var(--white-primary);
+  border: 1px solid rgba(var(--clr-outline), 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  position: relative;
+  z-index: 2;
+  max-width: min(90rem, 90%);
+}
+
+.white-bar > * {
+  flex-basis: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-grow: 0.5;
+}
+
+.logo img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.title {
+  display: flex;
+  font-family: "Gotham Black", sans-serif;
+  font-weight: bold;
+  font-size: var(--fs-1000);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  cursor: default;
+  justify-content: center;
+  flex-grow: 2;
+}
+
+.cart {
+  flex-grow: 0.5;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  height: 2rem;
+  background: var(--gradient-primary);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-left: auto;
+  transition: 0.2s linear;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.cart-button::before {
+  position: absolute;
+  content: "";
+  border-radius: 1rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white-primary);
+  z-index: 2;
+  transition: opacity 0.2s linear;
+  opacity: 0;
+}
+
+.cart-button:hover::before {
+  opacity: 1;
+}
+
+.cart-button:hover {
+  border-color: black;
+}
+
+.cart-button i {
+  font-size: 1rem;
+  color: var(--white-primary);
+  transition: color 0.2s ease-in;
+}
+
+.cart-button:hover i {
+  color: black;
+}
+
+.cart-icon {
+  z-index: 4;
+}
+
+.hamburger-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 3rem;
+  background-color: var(--white-primary);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+.hamburger-button {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-hamburger img {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .hamburger-bar {
+    display: flex;
+  }
+
+  .white-bar {
+    display: none;
+  }
+}

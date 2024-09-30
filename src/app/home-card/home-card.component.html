@@ -1,5 +1,5 @@
-<img class="card" loading="lazy" [src]="design.image" />
-<div class="info">
+<img class="card" loading="lazy" [src]="design.image" (click)="showDesign()" />
+<div class="info" (click)="showDesign()">
   <div class="row basic-info">
     <div class="name">{{ design.name }}</div>
     <div class="price">{{ (design.price | currency : "RSD")! }}</div>
@@ -13,6 +13,7 @@
     <cw-button
       iconClasses="fas fa-shopping-cart"
       text="Add to cart"
+      (click)="showDesign()"
     ></cw-button>
   </div>
 </div>

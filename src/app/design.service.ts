@@ -1,7 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import {
   collection,
+  doc,
   Firestore,
+  getDoc,
   getDocs,
   limit,
   orderBy,
@@ -18,6 +20,11 @@ export class DesignService {
   firestore = inject(Firestore);
 
   constructor() {}
+
+  async getDesign(id: string): Promise<Design> {
+    const snapshot = await getDoc(doc(this.firestore, 'designs/' + id));
+    return snapshot.data() as Design;
+  }
 
   async getDesigns(
     pageSize: number,
