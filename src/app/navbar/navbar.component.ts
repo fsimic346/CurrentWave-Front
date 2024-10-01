@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from "../button/button.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'cw-navbar',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent,CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  styleUrls: ['./navbar.component.css'], 
 })
-export class NavbarComponent {}
+export class NavbarComponent implements OnInit {
+
+  isAnimationTriggered = false;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isAnimationTriggered = true;
+    }, 0); 
+  }
+}

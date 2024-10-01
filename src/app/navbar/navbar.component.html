@@ -24,7 +24,6 @@
     <div></div>
   </div>
 
-
   <div class="content">
     <img src="assets/current-wave-white.svg" class="logo-secondary" />
     <div class="slogan">
@@ -32,21 +31,22 @@
     </div>
   </div>
 
-    <button class="browse-button">Pogledaj kolekciju</button>
+  <button class="browse-button">Pogledaj kolekciju</button>
 
   <div class="left-image-wrapper">
-    <img src="assets/apparel/cench.png" alt="Kendrick" class="left-image" />
+    <img src="assets/apparel/cench.png" alt="Kendrick" class="left-image tshirt" [ngClass]="{'show': isAnimationTriggered}" />
   </div>
-
+  
   <div class="left-image-wrapper-2">
-    <img src="assets/apparel/kendrick.png" alt="Kendrick" class="left-image-2" />
+    <img src="assets/apparel/kendrick.png" alt="Kendrick" class="left-image-2 tshirt" [ngClass]="{'show': isAnimationTriggered}" />
   </div>
   
   <div class="right-image-wrapper">
-    <img src="assets/apparel/gojo.png" alt="Kendrick" class="right-image" />
+    <img src="assets/apparel/gojo.png" alt="Kendrick" class="right-image tshirt" [ngClass]="{'show': isAnimationTriggered}" />
   </div>
-
+  
   <div class="right-image-wrapper-2">
-    <img src="assets/apparel/travis.png" alt="Kendrick" class="right-image-2" />
+    <img src="assets/apparel/travis.png" alt="Kendrick" class="right-image-2 tshirt" [ngClass]="{'show': isAnimationTriggered}" />
   </div>
+  
 </div>

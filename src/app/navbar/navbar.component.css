@@ -20,7 +20,7 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 1; 
   pointer-events: none;
 }
@@ -286,3 +286,49 @@
     display: none;
   }
 }
+
+.tshirt {
+  opacity: 0; 
+  transform: translateY(50px) rotate(0deg); 
+  animation-duration: 0.8s; 
+  animation-fill-mode: forwards; 
+  transition: transform 0.5s; 
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotate(0deg); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotation)); 
+  }
+}
+
+
+.left-image {
+  --rotation: 15deg; 
+  animation-delay: 0.2s; 
+  animation-name: slide-in; 
+}
+
+.left-image-2 {
+  --rotation: -10deg; 
+  animation-delay: 0.3s; 
+  animation-name: slide-in; 
+}
+
+.right-image {
+  --rotation: -15deg; 
+  animation-delay: 0.2s; 
+  animation-name: slide-in; 
+}
+
+.right-image-2 {
+  --rotation: 25deg; 
+  animation-delay: 0.3s; 
+  animation-name: slide-in; 
+}
+
+
