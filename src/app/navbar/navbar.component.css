@@ -285,6 +285,10 @@
     max-height: 55rem;
   }
 
+  .black-overlay {
+    opacity: 0.10; 
+  }
+
   .left-image-wrapper {
     top: -2rem;
     left: -8rem;
@@ -308,7 +312,7 @@
 
 @media screen and (max-width: 1600px) {
   .black-overlay {
-    opacity: 0.25; 
+    opacity: 0.15; 
   }
 }
 
@@ -386,36 +390,36 @@
 
 @media screen and (max-width: 600px) {
   .image {
-    max-width: 27rem;
-    max-height: 27rem;
+    max-width: 29rem;
+    max-height: 29rem;
   }
 
   .black-overlay {
     .black-overlay {
-      opacity: 0.35;
+      opacity: 0.45;
     }
   }
 
   .left-image-wrapper {
-    top: 4rem;
-    left: -7rem;
-    display: none;
+    top: 2rem;
+    left: -10rem;
   }
   
   .left-image-wrapper-2 {
-    top: 4rem;
+    top: 2rem;
     left: -15rem;
-  }
-  
-  .right-image-wrapper {
-    top: 4rem;
-    right: -7rem;
     display: none;
   }
   
+  .right-image-wrapper {
+    top: 2rem;
+    right: -10rem;
+  }
+  
   .right-image-wrapper-2 {
-    top: 4rem;
+    top: 2rem;
     right: -15rem;
+    display: none;
   }
 }
 
