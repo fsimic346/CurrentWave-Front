@@ -13,7 +13,7 @@
 }
 
 .black-overlay {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -21,10 +21,10 @@
   height: 100%;
   width: 100%;
   background-color: black;
-  z-index: 1; 
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.05; 
-  transition: opacity 0.5s ease; 
+  opacity: 0.05;
+  transition: opacity 0.5s ease;
 }
 
 .white-bar {
@@ -47,7 +47,6 @@
 .white-bar > * {
   flex-basis: 0;
 }
-
 
 .logo {
   display: flex;
@@ -140,7 +139,6 @@
   width: 12rem;
   outline: none;
   border: none;
-  flex-grow: 0.3;
   background-color: var(--clr-primary);
   color: var(--white-primary);
   font-family: var(--ff-primary);
@@ -213,7 +211,7 @@
   right: -25rem;
 }
 
-.image{
+.image {
   max-width: 60rem;
   max-height: 60rem;
   transition: width 0.3s ease, height 0.3s ease;
@@ -221,30 +219,30 @@
 
 .left-image {
   transform: rotate(15deg);
-  --rotation: 15deg; 
-  animation-delay: 0.2s; 
-  animation-name: slide-in; 
+  --rotation: 15deg;
+  animation-delay: 0.2s;
+  animation-name: slide-in;
 }
 
 .right-image {
   transform: rotate(-15deg);
-  --rotation: -15deg; 
-  animation-delay: 0.2s; 
-  animation-name: slide-in; 
+  --rotation: -15deg;
+  animation-delay: 0.2s;
+  animation-name: slide-in;
 }
 
 .left-image-2 {
   transform: rotate(-10deg);
-  --rotation: -10deg; 
-  animation-delay: 0.3s; 
-  animation-name: slide-in; 
+  --rotation: -10deg;
+  animation-delay: 0.3s;
+  animation-name: slide-in;
 }
 
 .right-image-2 {
   transform: rotate(25deg);
-  --rotation: 25deg; 
-  animation-delay: 0.3s; 
-  animation-name: slide-in; 
+  --rotation: 25deg;
+  animation-delay: 0.3s;
+  animation-name: slide-in;
 }
 
 .hamburger-bar {
@@ -286,24 +284,24 @@
   }
 
   .black-overlay {
-    opacity: 0.10; 
+    opacity: 0.1;
   }
 
   .left-image-wrapper {
     top: -2rem;
     left: -8rem;
   }
-  
+
   .left-image-wrapper-2 {
     top: -2rem;
     left: -25rem;
   }
-  
+
   .right-image-wrapper {
     top: -2rem;
     right: -8rem;
   }
-  
+
   .right-image-wrapper-2 {
     top: -2rem;
     right: -20rem;
@@ -312,7 +310,7 @@
 
 @media screen and (max-width: 1600px) {
   .black-overlay {
-    opacity: 0.15; 
+    opacity: 0.15;
   }
 }
 
@@ -323,24 +321,24 @@
   }
 
   .black-overlay {
-    opacity: 0.25; 
+    opacity: 0.25;
   }
 
   .left-image-wrapper {
     top: -1rem;
     left: -8rem;
   }
-  
+
   .left-image-wrapper-2 {
     top: -1rem;
     left: -25rem;
   }
-  
+
   .right-image-wrapper {
     top: -1rem;
     right: -8rem;
   }
-  
+
   .right-image-wrapper-2 {
     top: -1rem;
     right: -20rem;
@@ -356,14 +354,14 @@
     display: none;
   }
 
-  .browse-button{
+  .browse-button {
     height: 2.7rem;
     width: 7rem;
     font-size: 0.8rem;
   }
 
   .black-overlay {
-    opacity: 0.35; 
+    opacity: 0.35;
   }
 
   .image {
@@ -375,17 +373,17 @@
     top: 1rem;
     left: -4rem;
   }
-  
+
   .left-image-wrapper-2 {
     top: 1rem;
     left: -15rem;
   }
-  
+
   .right-image-wrapper {
     top: 1rem;
     right: -4rem;
   }
-  
+
   .right-image-wrapper-2 {
     top: 2rem;
     right: -15rem;
@@ -408,16 +406,16 @@
     top: 2rem;
     left: -10rem;
   }
-  
+
   .left-image-wrapper-2 {
     display: none;
   }
-  
+
   .right-image-wrapper {
     top: 2rem;
     right: -10rem;
   }
-  
+
   .right-image-wrapper-2 {
     display: none;
   }
@@ -439,29 +437,28 @@
     top: 2rem;
     left: -10rem;
   }
-  
+
   .right-image-wrapper {
     top: 2rem;
     right: -10rem;
   }
-  
 }
 
 .tshirt {
-  opacity: 0; 
-  transform: translateY(50px) rotate(0deg); 
-  animation-duration: 0.8s; 
-  animation-fill-mode: forwards; 
-  transition: transform 0.5s; 
+  opacity: 0;
+  transform: translateY(50px) rotate(0deg);
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  transition: transform 0.5s;
 }
 
 @keyframes slide-in {
   0% {
     opacity: 0;
-    transform: translateY(50px) rotate(0deg); 
+    transform: translateY(50px) rotate(0deg);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) rotate(var(--rotation)); 
+    transform: translateY(0) rotate(var(--rotation));
   }
 }
