@@ -93,7 +93,7 @@ h2 {
 
 .email input {
   // flex-grow: 0.7;
-  font-size: 1.1rem;
+  font-size: var(--fs-500);
   padding: 0.5rem;
   border: 2px solid var(--white-primary);
   outline: none;
