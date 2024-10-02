@@ -356,6 +356,12 @@
     display: none;
   }
 
+  .browse-button{
+    height: 2.7rem;
+    width: 7rem;
+    font-size: 0.8rem;
+  }
+
   .black-overlay {
     opacity: 0.35; 
   }
@@ -386,8 +392,6 @@
   }
 }
 
-
-
 @media screen and (max-width: 600px) {
   .image {
     max-width: 29rem;
@@ -406,8 +410,6 @@
   }
   
   .left-image-wrapper-2 {
-    top: 2rem;
-    left: -15rem;
     display: none;
   }
   
@@ -417,10 +419,32 @@
   }
   
   .right-image-wrapper-2 {
-    top: 2rem;
-    right: -15rem;
     display: none;
   }
+}
+
+@media screen and (max-width: 370px) {
+  .image {
+    max-width: 25rem;
+    max-height: 25rem;
+  }
+
+  .black-overlay {
+    .black-overlay {
+      opacity: 0.45;
+    }
+  }
+
+  .left-image-wrapper {
+    top: 2rem;
+    left: -10rem;
+  }
+  
+  .right-image-wrapper {
+    top: 2rem;
+    right: -10rem;
+  }
+  
 }
 
 .tshirt {
