@@ -1,4 +1,7 @@
-<div class="container">
+<div class="container">  
+
+  <div class="black-overlay"></div>
+
   <div class="white-bar">
     <div class="logo">
       <img src="assets/current-wave-gradient.svg" />
@@ -24,15 +27,26 @@
   <div class="content">
     <img src="assets/current-wave-white.svg" class="logo-secondary" />
     <div class="slogan">
-      Clothing brand čiji je glavni cilj kreiranje svežih i autentičnih
-      dizajnova rap i anime odece.
+      Pridruži se talasu.
     </div>
   </div>
 
-  <div class="left-image-wrapper">
-    <img src="assets/apparel/kendrick.png" alt="Kendrick" class="left-image" />
+  <button class="browse-button">Pogledaj kolekciju</button>
+
+  <div class="left-image-wrapper wrapper-position">
+    <img src="assets/apparel/cench.png" alt="Kendrick" class="left-image tshirt image" [ngClass]="{'show': isAnimationTriggered}" />
   </div>
-  <div class="right-image-wrapper">
-    <img src="assets/apparel/kendrick.png" alt="Kendrick" class="right-image" />
+  
+  <div class="left-image-wrapper-2 wrapper-position" >
+    <img src="assets/apparel/kendrick.png" alt="Kendrick" class="left-image-2 tshirt image" [ngClass]="{'show': isAnimationTriggered}" />
   </div>
+  
+  <div class="right-image-wrapper wrapper-position">
+    <img src="assets/apparel/gojo.png" alt="Kendrick" class="right-image tshirt image" [ngClass]="{'show': isAnimationTriggered}" />
+  </div>
+  
+  <div class="right-image-wrapper-2 wrapper-position">
+    <img src="assets/apparel/travis.png" alt="Kendrick" class="right-image-2 tshirt image" [ngClass]="{'show': isAnimationTriggered}" />
+  </div>
+  
 </div>
