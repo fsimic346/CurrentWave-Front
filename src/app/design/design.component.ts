@@ -14,6 +14,7 @@ export class DesignComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   designService: DesignService = inject(DesignService);
   design?: Design;
+selectedSize: any;
 
   async ngOnInit(): Promise<void> {
     const id = this.route.snapshot.paramMap.get('id') as string;

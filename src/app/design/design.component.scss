@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .apparel-info{
+    padding:2rem;
+    padding-left: 0;
+  }
+
+  .name{
+    font-size: 4rem;
+  }
+
+  .category{
+    font-size: 2rem;
+  }
+
+  .price{
+    font-size: 2rem;
+    color:black;
+  }
+  
+  .size{
+    font-size: 1.5rem;
+  }
+
+  .add-to-cart-btn {
+    height: 5rem;
+    width: 20rem;
+    outline: none;
+    border: none;
+    background-color: var(--white-primary);
+    color: black;
+    font-family: var(--ff-primary);
+    font-size: 1.4rem;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .add-to-cart-btn:hover {
+    background-color: black;
+    color: var(--white-primary);
+  }
+
+  .apparel-images {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .main-image {
+    max-width: 38rem;
+    height: auto;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
+  }
+  
+  .thumbnail-images {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .thumbnail {
+    width: 5rem;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .size-selection {
+    padding-bottom: 1rem;
+  }
