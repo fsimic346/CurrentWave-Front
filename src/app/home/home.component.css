@@ -28,6 +28,8 @@
   user-select: none;
   font-weight: bold;
   width: max-content;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .grid {
@@ -50,6 +52,7 @@
   );
   grid-auto-rows: 1fr;
   justify-content: center;
+  padding-bottom: 2rem;
 }
 
 .visible {
