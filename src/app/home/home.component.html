@@ -1,15 +1,44 @@
 <cw-navbar></cw-navbar>
 <div class="wrapper">
   <h1 class="title">NAŠI PROIZVODI</h1>
-  <!-- <div class="loader" *ngIf="!contentRendered">Loading...</div> -->
+  <h2 class="subtitle">Majice</h2>
   <div class="grid">
     <cw-home-card
-      *ngFor="let design of designs; let last = last; trackBy: identify"
+      *ngFor="let design of shirtDesigns; let last = last; trackBy: identify"
       [design]="design"
     >
       <ng-container *ngIf="last && !contentRendered">{{
         onContentRendered()
       }}</ng-container>
     </cw-home-card>
+    <div class="show-more">
+      <div class="content">
+        <img
+          class="logo"
+          src="assets/current-wave-animated.svg"
+          alt="current wave logo"
+        />Još proizvoda...
+      </div>
+    </div>
+  </div>
+  <h2 class="subtitle">Duksevi</h2>
+  <div class="grid">
+    <cw-home-card
+      *ngFor="let design of shirtDesigns; let last = last; trackBy: identify"
+      [design]="design"
+    >
+      <ng-container *ngIf="last && !contentRendered">{{
+        onContentRendered()
+      }}</ng-container>
+    </cw-home-card>
+    <div class="show-more">
+      <div class="content">
+        <img
+          class="logo"
+          src="assets/current-wave-animated.svg"
+          alt="current wave logo"
+        />Još proizvoda...
+      </div>
+    </div>
   </div>
 </div>

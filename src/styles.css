@@ -12,8 +12,10 @@
   --clr-primary: #4dbceb;
   --clr-primary-700: #7ac8e9;
   --clr-offwhite: #c0e4f1;
+  --clr-gray: hsl(0, 0%, 94%);
 
   --fs-1000: 2.5rem;
+  --fs-900: 2.25rem;
   --fs-800: 2rem;
   --fs-700: 1.5rem;
   --fs-600: 1.25rem;
@@ -28,6 +30,7 @@
 @media screen and (max-width: 800px) {
   :root {
     --fs-1000: 2rem;
+    --fs-900: 1.75rem;
     --fs-800: 1.5rem;
     --fs-700: 1.25rem;
     --fs-600: 1.1rem;
@@ -67,4 +70,9 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
 }

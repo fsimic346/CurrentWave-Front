@@ -14,7 +14,8 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class HomeComponent implements OnInit {
   contentRendered: boolean = false;
-  designs: Design[] = [];
+  shirtDesigns: Design[] = [];
+  hoodieDesigns: Design[] = [];
 
   changeDetector = inject(ChangeDetectorRef);
   designService = inject(DesignService);
@@ -24,9 +25,18 @@ export class HomeComponent implements OnInit {
   }
 
   async loadDesigns(term: string = ''): Promise<void> {
-    const { designs, lastDoc } = await this.designService.getDesigns(100);
+    const shirts = await this.designService.getDesigns({
+      count: 5,
+      type: 'Majica',
+    });
 
-    this.designs = designs;
+    const hoodies = await this.designService.getDesigns({
+      count: 5,
+      type: 'Duks',
+    });
+
+    this.shirtDesigns = shirts;
+    this.hoodieDesigns = hoodies;
   }
 
   onContentRendered() {

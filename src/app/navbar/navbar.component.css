@@ -33,7 +33,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 2rem;
-  width: 75%;
+  width: 100%;
+  max-width: min(90rem, 90%);
   height: 3.2rem;
   background: var(--white-primary);
   border: 1px solid rgba(var(--clr-outline), 0.5);

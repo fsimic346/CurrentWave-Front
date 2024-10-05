@@ -26,39 +26,47 @@ export class DesignService {
     return snapshot.data() as Design;
   }
 
-  async getDesigns(
-    pageSize: number,
-    startAfterDoc: any = null,
-    searchTerm: string = ''
-  ): Promise<{ designs: Design[]; lastDoc: any }> {
+  async getDesigns(params: {
+    count?: number;
+    searchTerm?: string;
+    category?: string;
+    type?: string;
+  }): Promise<Design[]> {
     let designQuery = query(
       collection(this.firestore, 'designs'),
-      orderBy('createdAt', 'desc'),
-      limit(pageSize)
+      orderBy('createdAt', 'desc')
     );
 
-    if (searchTerm) {
+    if (params.searchTerm) {
       designQuery = query(
         designQuery,
-        where('name', '>=', searchTerm),
-        where('name', '<=', searchTerm + '\uf8ff')
+        where('name', '>=', params.searchTerm),
+        where('name', '<=', params.searchTerm + '\uf8ff')
       );
     }
 
-    if (startAfterDoc) {
-      designQuery = query(designQuery, startAfter(startAfterDoc));
+    if (params.count) {
+      designQuery = query(designQuery, limit(params.count));
+    }
+
+    if (params.category) {
+      designQuery = query(
+        designQuery,
+        where('category', '==', params.category)
+      );
+    }
+
+    if (params.type) {
+      designQuery = query(designQuery, where('type', '==', params.type));
     }
 
     const designSnapshot = await getDocs(designQuery);
     const designs: Design[] = [];
-    let lastDoc = null;
 
     designSnapshot.forEach((doc) => {
       designs.push({ id: doc.id, ...doc.data() } as Design);
     });
 
-    lastDoc = designSnapshot.docs[designSnapshot.docs.length - 1];
-
-    return { designs, lastDoc };
+    return designs;
   }
 }
