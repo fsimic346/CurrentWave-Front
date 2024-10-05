@@ -14,8 +14,13 @@ import { Router } from '@angular/router';
 export class HomeCardComponent {
   @Input({ required: true })
   design!: Design;
+  imageLoaded = false;
 
   router: Router = inject(Router);
+
+  onImageLoad() {
+    this.imageLoaded = true;
+  }
 
   showDesign() {
     this.router.navigate(['/design', this.design.id]);
