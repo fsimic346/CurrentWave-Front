@@ -1,74 +1,89 @@
 .container {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
 
-  .apparel-info{
-    padding:2rem;
-    padding-left: 0;
-  }
+.apparel-info {
+  padding: 2rem;
+  padding-left: 0;
+}
 
-  .name{
-    font-size: 4rem;
-  }
+.name {
+  font-size: 4rem;
+}
 
-  .category{
-    font-size: 2rem;
-  }
+.category {
+  font-size: 2rem;
+}
 
-  .price{
-    font-size: 2rem;
-    color:black;
-  }
-  
-  .size{
-    font-size: 1.5rem;
-  }
+.price {
+  font-size: 2rem;
+  color: black;
+}
 
-  .add-to-cart-btn {
-    height: 5rem;
-    width: 20rem;
-    outline: none;
-    border: none;
-    background-color: var(--white-primary);
-    color: black;
-    font-family: var(--ff-primary);
-    font-size: 1.4rem;
-    border: 3px solid black;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+.size {
+  font-size: 1.5rem;
+}
 
-  .add-to-cart-btn:hover {
-    background-color: black;
-    color: var(--white-primary);
-  }
+.add-to-cart-btn {
+  height: 5rem;
+  width: 20rem;
+  outline: none;
+  border: none;
+  background-color: var(--white-primary);
+  color: black;
+  font-family: var(--ff-primary);
+  font-size: 1.4rem;
+  border: 3px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  .apparel-images {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-  }
-  
-  .main-image {
-    max-width: 38rem;
-    height: auto;
-    padding-bottom: 1rem;
-    border-radius: 2rem;
-  }
-  
-  .thumbnail-images {
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .thumbnail {
-    width: 5rem;
-    height: auto;
-    cursor: pointer;
-  }
-  
-  .size-selection {
-    padding-bottom: 1rem;
-  }
+.add-to-cart-btn:hover {
+  background-color: black;
+  color: var(--white-primary);
+}
+
+.apparel-images {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.thumbnail-images {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.thumbnail {
+  width: 5rem;
+  height: auto;
+  cursor: pointer;
+}
+
+.size-selection {
+  padding-bottom: 1rem;
+}
+
+.main-image {
+  width: 30rem;
+  height: 30rem;
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper {
+  width: 30rem;
+  height: 30rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.5rem;
+  cursor: zoom-in;
+}
+
+.image-wrapper:hover .main-image {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}

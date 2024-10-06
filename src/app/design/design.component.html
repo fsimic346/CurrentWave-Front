@@ -1,6 +1,8 @@
 <div class="container">
   <div class="apparel-images">
-    <img [src]="design?.image" alt="{{ design?.name }}" class="main-image" />
+    <div class="image-wrapper">
+      <img [src]="design?.image" alt="{{ design?.name }}" class="main-image" />
+    </div>
     <div class="thumbnail-images">
       <img [src]="design?.front" class="thumbnail" />
       <img [src]="design?.back" class="thumbnail" />
