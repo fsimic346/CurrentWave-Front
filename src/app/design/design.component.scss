@@ -5,12 +5,17 @@
 }
 
 .apparel-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 27rem;
+  max-height: 34rem;
   padding: 2rem;
   padding-left: 0;
+  gap: 1rem;
 }
 
 .name {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .category {
@@ -18,17 +23,16 @@
 }
 
 .price {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
 }
 
 .size {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .add-to-cart-btn {
   height: 5rem;
-  width: 20rem;
   outline: none;
   border: none;
   background-color: var(--white-primary);
@@ -61,6 +65,7 @@
   width: 5rem;
   height: auto;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 .size-selection {
@@ -83,7 +88,36 @@
 }
 
 .image-wrapper:hover .main-image {
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+}
+
+.all-sizes {
+  display: flex;
+  padding: 0.5rem;
+  padding-left: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.selected-size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: auto;
+  width: 3.2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.selected-size:hover {
+  background-color: black;
+  color: var(--white-primary);
 }
