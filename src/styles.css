@@ -10,6 +10,7 @@
   --white-primary: #fafafa;
   --white-primary-alpha: rgba(250, 250, 250, 0.3);
   --clr-primary: #4dbceb;
+  --clr-primary-alpha: #4dbcebb4;
   --clr-error: #eb4d4d;
   --clr-primary-700: #7ac8e9;
   --clr-offwhite: #c0e4f1;
@@ -77,4 +78,14 @@ body {
 img {
   user-select: none;
   pointer-events: none;
+}
+
+::selection {
+  background-color: var(--clr-primary-alpha);
+  color: var(--white-primary);
+}
+
+::-moz-selection {
+  background-color: var(--clr-primary-alpha);
+  color: var(--white-primary);
 }
