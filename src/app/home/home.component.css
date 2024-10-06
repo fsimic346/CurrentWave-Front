@@ -89,6 +89,7 @@
   font-size: var(--fs-700);
   font-weight: bold;
   text-align: center;
+  user-select: none;
 }
 
 .show-more:hover {

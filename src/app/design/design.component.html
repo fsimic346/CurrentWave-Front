@@ -1,19 +1,17 @@
 <div class="container">
-
-    <div class="apparel-images">
-      <img [src]="design?.image" alt="{{ design?.name }}" class="main-image" />
-      <div class="thumbnail-images">
-        <img [src]="design?.front" class="thumbnail" />
-        <img [src]="design?.back" class="thumbnail" />
-      </div>
-    </div>
-  
-    <div class="apparel-info">
-      <div class="name">{{ design?.name }}</div>
-      <div class="category">{{ design?.category }} {{ design?.type }}</div>
-      <div class="price">{{ design?.price }}.00 rsd</div>
-    <div class="size">Velicina:</div>
-    <button class="add-to-cart-btn">Dodaj u korpu</button>
+  <div class="apparel-images">
+    <img [src]="design?.image" alt="{{ design?.name }}" class="main-image" />
+    <div class="thumbnail-images">
+      <img [src]="design?.front" class="thumbnail" />
+      <img [src]="design?.back" class="thumbnail" />
     </div>
   </div>
-  
+
+  <div class="apparel-info">
+    <div class="name">{{ design?.name }}</div>
+    <div class="category">{{ design?.category }} {{ design?.type }}</div>
+    <div class="price">{{ design?.price }}.00 rsd</div>
+    <div class="size">Velicina:</div>
+    <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button>
+  </div>
+</div>

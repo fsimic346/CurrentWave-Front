@@ -10,8 +10,10 @@
   --white-primary: #fafafa;
   --white-primary-alpha: rgba(250, 250, 250, 0.3);
   --clr-primary: #4dbceb;
+  --clr-error: #eb4d4d;
   --clr-primary-700: #7ac8e9;
   --clr-offwhite: #c0e4f1;
+  --clr-offwhite-700: hsl(196, 64%, 94%);
   --clr-gray: hsl(0, 0%, 94%);
 
   --fs-1000: 2.5rem;

@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SimpleNavComponent } from './simple-nav/simple-nav.component';
 import { CommonModule } from '@angular/common';
+import { CartSidebarComponent } from './cart-sidebar/cart-sidebar.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     SimpleNavComponent,
     CommonModule,
+    CartSidebarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
