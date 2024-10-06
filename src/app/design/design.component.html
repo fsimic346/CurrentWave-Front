@@ -4,21 +4,15 @@
       <img [src]="selectedImage" alt="{{ design?.name }}" class="main-image" />
     </div>
     <div class="thumbnail-images">
-      <img
-        [src]="design?.image"
-        class="thumbnail"
-        (click)="showImage(design?.image)"
-      />
-      <img
-        [src]="design?.front"
-        class="thumbnail"
-        (click)="showImage(design?.front)"
-      />
-      <img
-        [src]="design?.back"
-        class="thumbnail"
-        (click)="showImage(design?.back)"
-      />
+      <div class="thumbnail" (click)="showImage(design?.image)">
+        <img [src]="design?.image" />
+      </div>
+      <div class="thumbnail" (click)="showImage(design?.front)">
+        <img [src]="design?.front" />
+      </div>
+      <div class="thumbnail" (click)="showImage(design?.back)">
+        <img [src]="design?.back" />
+      </div>
     </div>
   </div>
 

@@ -63,10 +63,14 @@
 }
 
 .thumbnail {
+  cursor: pointer;
+}
+
+.thumbnail img {
   width: 5rem;
   height: auto;
-  cursor: pointer;
   border-radius: 0.5rem;
+  border: none;
 }
 
 .size-selection {
@@ -77,6 +81,7 @@
   width: 30rem;
   height: 30rem;
   transition: transform 0.3s ease;
+  border: none;
 }
 
 .image-wrapper {
@@ -86,6 +91,7 @@
   position: relative;
   border-radius: 1.5rem;
   cursor: zoom-in;
+  border: none;
 }
 
 .image-wrapper:hover .main-image {

@@ -42,7 +42,6 @@ export class DesignComponent implements OnInit {
 
   showImage(image: any) {
     this.selectedImage = image;
-    console.log('klik');
   }
 
   addToCart() {
