@@ -1,9 +1,18 @@
 <div class="container">
   <div class="apparel-images">
-    <img [src]="design?.image" alt="{{ design?.name }}" class="main-image" />
+    <div class="image-wrapper">
+      <img [src]="selectedImage" alt="{{ design?.name }}" class="main-image" />
+    </div>
     <div class="thumbnail-images">
-      <img [src]="design?.front" class="thumbnail" />
-      <img [src]="design?.back" class="thumbnail" />
+      <div class="thumbnail" (click)="showImage(design?.image)">
+        <img [src]="design?.image" />
+      </div>
+      <div class="thumbnail" (click)="showImage(design?.front)">
+        <img [src]="design?.front" />
+      </div>
+      <div class="thumbnail" (click)="showImage(design?.back)">
+        <img [src]="design?.back" />
+      </div>
     </div>
   </div>
 
@@ -11,7 +20,11 @@
     <div class="name">{{ design?.name }}</div>
     <div class="category">{{ design?.category }} {{ design?.type }}</div>
     <div class="price">{{ design?.price }}.00 rsd</div>
-    <div class="size">Velicina:</div>
+    <div class="all-sizes">
+      <div *ngFor="let size of sizes" class="selected-size">
+        {{ size }}
+      </div>
+    </div>
     <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button>
   </div>
 </div>
