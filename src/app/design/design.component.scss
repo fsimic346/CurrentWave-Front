@@ -7,7 +7,7 @@
 .apparel-info {
   display: flex;
   flex-direction: column;
-  max-width: 27rem;
+  max-width: 32rem;
   max-height: 34rem;
   padding: 2rem;
   padding-left: 0;
@@ -32,6 +32,7 @@
 }
 
 .add-to-cart-btn {
+  max-width: 22rem;
   height: 5rem;
   outline: none;
   border: none;
