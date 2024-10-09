@@ -171,16 +171,16 @@
     padding-left: 2rem;
     padding-top: 0rem;
     justify-content: center;
-    width: 25rem;
+    width: 20rem;
   }
   .main-image {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    height: 20rem;
   }
   
   .image-wrapper {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    height: 20rem;
   }
 
   .thumbnail-images {
@@ -189,5 +189,40 @@
 
   .apparel-images {
     padding-top: 0;
+  }
+
+  .name, .category, .price {
+    justify-content: flex-start; 
+  }
+
+  .name{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .category{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .price{
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .add-to-cart-btn{
+    width: 12rem;
+    height: 4rem;
+  }
+  .apparel-info{
+    justify-content: center;
+    align-items: center;
+  }
+  .material{
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .all-sizes{
+    padding-left:0.5rem;
+  }
+  .all-sizes {
+    justify-content: center;
   }
 }
