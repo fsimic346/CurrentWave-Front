@@ -30,7 +30,7 @@
   --ff-secondary: "Poppins", sans-serif;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
   :root {
     --fs-1000: 2rem;
     --fs-900: 1.75rem;
