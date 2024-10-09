@@ -21,10 +21,16 @@
     <div class="category">{{ design?.category }} {{ design?.type }}</div>
     <div class="price">{{ design?.price }}.00 rsd</div>
     <div class="all-sizes">
-      <div *ngFor="let size of sizes" class="selected-size">
+      <div
+        *ngFor="let size of sizes"
+        class="selected-size"
+        [class.active]="size === selectedSize"
+        (click)="selectSize(size)"
+      >
         {{ size }}
       </div>
     </div>
+    
     <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button>
   </div>
 </div>

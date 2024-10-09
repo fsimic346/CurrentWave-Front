@@ -15,9 +15,9 @@ import { CommonModule } from '@angular/common';
 })
 export class DesignComponent implements OnInit {
   design?: Design;
-  selectedSize: any;
   selectedImage: any;
   sizes: string[] = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  selectedSize: string = this.sizes[0];
 
   route: ActivatedRoute = inject(ActivatedRoute);
   designService: DesignService = inject(DesignService);
@@ -38,6 +38,10 @@ export class DesignComponent implements OnInit {
       .catch((error) => {
         console.error('Error fetching design:', error);
       });
+  }
+
+  selectSize(size: string) {
+    this.selectedSize = size;
   }
 
   showImage(image: any) {
