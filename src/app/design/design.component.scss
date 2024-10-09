@@ -169,6 +169,7 @@
   }
   .apparel-info{
     padding-left: 2rem;
+    padding-top: 0rem;
     justify-content: center;
     width: 25rem;
   }
@@ -184,5 +185,9 @@
 
   .thumbnail-images {
     justify-content: center;
+  }
+
+  .apparel-images {
+    padding-top: 0;
   }
 }
