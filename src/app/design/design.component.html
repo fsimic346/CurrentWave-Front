@@ -4,16 +4,17 @@
       <img [src]="selectedImage" alt="{{ design?.name }}" class="main-image" />
     </div>
     <div class="thumbnail-images">
-      <div class="thumbnail" (click)="showImage(design?.image)">
+      <div class="thumbnail" [class.selected]="selectedImage === design?.image" (click)="showImage(design?.image)">
         <img [src]="design?.image" />
       </div>
-      <div class="thumbnail" (click)="showImage(design?.front)">
+      <div class="thumbnail" [class.selected]="selectedImage === design?.front" (click)="showImage(design?.front)">
         <img [src]="design?.front" />
       </div>
-      <div class="thumbnail" (click)="showImage(design?.back)">
+      <div class="thumbnail" [class.selected]="selectedImage === design?.back" (click)="showImage(design?.back)">
         <img [src]="design?.back" />
       </div>
     </div>
+    
   </div>
 
   <div class="apparel-info">
@@ -32,5 +33,10 @@
     </div>
     
     <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button>
+
+    <div class="material">
+      100% pamuk.
+      Prati na 30°C
+    </div>
   </div>
 </div>
