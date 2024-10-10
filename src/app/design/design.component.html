@@ -1,42 +1,53 @@
 <div class="container">
-  <div class="apparel-images">
-    <div class="image-wrapper">
-      <img [src]="selectedImage" alt="{{ design?.name }}" class="main-image" />
+  <div class="row">
+    <div class="apparel-images">
+      <div class="image-wrapper">
+        <img [src]="selectedImage" alt="{{ design?.name }}" class="main-image" />
+      </div>
+      <div class="thumbnail-images">
+        <div class="thumbnail" [class.selected]="selectedImage === design?.image" (click)="showImage(design?.image)">
+          <img [src]="design?.image" />
+        </div>
+        <div class="thumbnail" [class.selected]="selectedImage === design?.front" (click)="showImage(design?.front)">
+          <img [src]="design?.front" />
+        </div>
+        <div class="thumbnail" [class.selected]="selectedImage === design?.back" (click)="showImage(design?.back)">
+          <img [src]="design?.back" />
+        </div>
+      </div>
     </div>
-    <div class="thumbnail-images">
-      <div class="thumbnail" [class.selected]="selectedImage === design?.image" (click)="showImage(design?.image)">
-        <img [src]="design?.image" />
+  
+    <div class="apparel-info">
+      <div class="name">{{ design?.name }}</div>
+      <div class="category">{{ design?.category }} {{ design?.type }}</div>
+      <div class="price">{{ design?.price }}.00 rsd</div>
+      <div class="all-sizes">
+        <div
+          *ngFor="let size of sizes"
+          class="selected-size"
+          [class.active]="size === selectedSize"
+          (click)="selectSize(size)"
+        >
+          {{ size }}
+        </div>
       </div>
-      <div class="thumbnail" [class.selected]="selectedImage === design?.front" (click)="showImage(design?.front)">
-        <img [src]="design?.front" />
-      </div>
-      <div class="thumbnail" [class.selected]="selectedImage === design?.back" (click)="showImage(design?.back)">
-        <img [src]="design?.back" />
-      </div>
+      <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button>
+      <div class="material">
+        100% pamuk. Prati na 30°C</div>
     </div>
-    
   </div>
 
-  <div class="apparel-info">
-    <div class="name">{{ design?.name }}</div>
-    <div class="category">{{ design?.category }} {{ design?.type }}</div>
-    <div class="price">{{ design?.price }}.00 rsd</div>
-    <div class="all-sizes">
-      <div
-        *ngFor="let size of sizes"
-        class="selected-size"
-        [class.active]="size === selectedSize"
-        (click)="selectSize(size)"
+  <div class="featured-items">
+    <h2 class="subtitle">
+      Slicni proizvodi
+    </h2>
+    <div class="grid">
+      <cw-home-card
+        *ngFor="let design of shirtDesigns"
+        [design]="design"
+        class="card"
       >
-        {{ size }}
-      </div>
-    </div>
-    
-    <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button>
-
-    <div class="material">
-      100% pamuk.
-      Prati na 30°C
+      </cw-home-card>
     </div>
   </div>
 </div>
