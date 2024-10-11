@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cw-navbar',
@@ -14,11 +15,16 @@ export class NavbarComponent implements OnInit {
   isAnimationTriggered = false;
 
   cartService = inject(CartService);
+  router: Router = inject(Router);
 
   ngOnInit() {
     setTimeout(() => {
       this.isAnimationTriggered = true;
     }, 0);
+  }
+
+  openProductPage() {
+    this.router.navigate(['/products']);
   }
 
   openCart() {
