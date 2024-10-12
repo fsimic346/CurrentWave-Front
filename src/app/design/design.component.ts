@@ -79,11 +79,11 @@ export class DesignComponent implements OnInit {
   addToCart() {
     if (!this.design) return;
     const cartItem: CartItem = {
-      productId: this.design!.id,
-      price: this.design!.price,
+      design: this.design!,
       quantity: 1,
-      size: 'M',
+      size: this.selectedSize,
     };
     this.cartService.addItem(cartItem);
+    this.cartService.openCart();
   }
 }

@@ -17,6 +17,12 @@
   transform: translateX(100%);
 }
 
+.empty {
+  font-family: var(--ff-secondary);
+  text-align: center;
+  margin-block: auto;
+}
+
 .visible {
   transform: translateX(0);
 }

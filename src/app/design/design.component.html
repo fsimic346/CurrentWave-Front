@@ -50,7 +50,12 @@
           {{ size }}
         </div>
       </div>
-      <cw-button class="add-to-cart-btn" text="Dodaj u korpu"></cw-button>
+      <cw-button
+        id="addToCartBtn"
+        class="add-to-cart-btn"
+        text="Dodaj u korpu"
+        (clicked)="addToCart()"
+      ></cw-button>
       <!-- <button class="add-to-cart-btn" (click)="addToCart()">Dodaj u korpu</button> -->
       <div class="material">100% pamuk. Prati na 30°C</div>
     </div>

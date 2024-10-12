@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { ShoppingCart } from '../models/shoppingCart';
 import { CartItem } from '../models/cartItem';
 
@@ -6,17 +6,21 @@ import { CartItem } from '../models/cartItem';
   providedIn: 'root',
 })
 export class CartService {
-  cart = signal<ShoppingCart>({
-    items: [],
-    totalAmount: 0,
-    isVisible: false,
-    isClosable: false,
-  });
+  cart = signal<ShoppingCart>(
+    this.loadCartFromStorage() || {
+      items: [],
+      totalAmount: 0,
+      isVisible: false,
+    }
+  );
 
   constructor() {}
 
   private calculateTotalAmount(items: CartItem[]): number {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+    return items.reduce(
+      (total, item) => total + item.design.price * item.quantity,
+      0
+    );
   }
 
   openCart() {
@@ -24,18 +28,11 @@ export class CartService {
       currentCart.isVisible = true;
       return currentCart;
     });
-    setTimeout(() => {
-      this.cart.update((currentCart) => {
-        currentCart.isClosable = true;
-        return currentCart;
-      });
-    }, 500);
   }
 
   closeCart() {
     this.cart.update((currentCart) => {
       currentCart.isVisible = false;
-      currentCart.isClosable = false;
       return currentCart;
     });
   }
@@ -43,7 +40,7 @@ export class CartService {
   addItem(item: CartItem) {
     this.cart.update((currentCart) => {
       const existingItem = currentCart.items.find(
-        (i) => i.productId === item.productId && i.size == item.size
+        (i) => i.design.id === item.design.id && i.size == item.size
       );
 
       if (existingItem) {
@@ -52,24 +49,54 @@ export class CartService {
         currentCart.items.push(item);
       }
 
-      currentCart.totalAmount += item.price * item.quantity;
+      currentCart.totalAmount += item.design.price * item.quantity;
+      this.saveCartToStorage(currentCart);
 
       return currentCart;
     });
   }
 
-  removeItem(productId: string) {
+  removeItem(item: CartItem) {
     this.cart.update((currentCart) => {
-      const item = currentCart.items.find((i) => i.productId === productId);
+      const existingItem = currentCart.items.find(
+        (i) => i.design.id === item.design.id && i.size == item.size
+      );
 
-      if (item) {
-        currentCart.totalAmount -= item.price * item.quantity;
-        currentCart.items = currentCart.items.filter(
-          (i) => i.productId !== productId
-        );
+      if (existingItem) {
+        existingItem.quantity--;
+        if (existingItem.quantity < 1) {
+          currentCart.items = currentCart.items.filter(
+            (i) => i != existingItem
+          );
+        }
       }
-
+      currentCart.totalAmount = this.calculateTotalAmount(currentCart.items);
+      this.saveCartToStorage(currentCart);
       return currentCart;
     });
+  }
+
+  deleteItem(item: CartItem) {
+    this.cart.update((currentCart) => {
+      const existingItem = currentCart.items.find(
+        (i) => i.design.id === item.design.id && i.size == item.size
+      );
+
+      if (existingItem) {
+        currentCart.items = currentCart.items.filter((i) => i != existingItem);
+      }
+      currentCart.totalAmount = this.calculateTotalAmount(currentCart.items);
+      this.saveCartToStorage(currentCart);
+      return currentCart;
+    });
+  }
+
+  private saveCartToStorage(cart: ShoppingCart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  private loadCartFromStorage(): ShoppingCart | null {
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : null;
   }
 }

@@ -1,6 +1,7 @@
+import { Design } from './design';
+
 export type CartItem = {
-  productId: string;
+  design: Design;
   quantity: number;
-  price: number;
   size: string;
 };

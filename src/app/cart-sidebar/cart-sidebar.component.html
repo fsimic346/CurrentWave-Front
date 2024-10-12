@@ -10,17 +10,30 @@
   </div>
 
   <div class="items">
-    <cw-cart-item></cw-cart-item>
-    <cw-cart-item></cw-cart-item>
-    <cw-cart-item></cw-cart-item>
-    <cw-cart-item></cw-cart-item>
-    <cw-cart-item></cw-cart-item>
+    <div *ngIf="cart().items.length < 1" class="empty">Korpa je prazna</div>
+    <cw-cart-item
+      *ngFor="let cartItem of cart().items"
+      [cartItem]="cartItem"
+    ></cw-cart-item>
   </div>
 
   <div class="bottom-bar">
-    <div class="cost subtotal"><span>Cena:</span> <span>5,970RSD</span></div>
-    <div class="cost shipping"><span>Poštarina:</span><span>430RSD</span></div>
-    <div class="cost total"><span>Ukupno:</span> <span>6,400RSD</span></div>
+    <div class="cost subtotal">
+      <span>Cena:</span>
+      <span>{{ cart().totalAmount | currency : "" : "" : "1.0-0" }}RSD</span>
+    </div>
+    <div class="cost shipping">
+      <span>Poštarina:</span
+      ><span>{{ SHIPPING_COST | currency : "" : "" : "1.0-0" }}RSD</span>
+    </div>
+    <div class="cost total">
+      <span>Ukupno:</span>
+      <span
+        >{{
+          cart().totalAmount + SHIPPING_COST | currency : "" : "" : "1.0-0"
+        }}RSD</span
+      >
+    </div>
     <cw-button class="checkout" text="Checkout"></cw-button>
   </div>
 </div>

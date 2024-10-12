@@ -1,19 +1,38 @@
 <div class="card">
-  <img class="image" src="assets/apparel/gokupost.jpg" />
+  <img class="image" [src]="cartItem.design.image" />
   <div class="content">
     <div class="title">
-      <span class="name">Kid Goku Majica</span>
-      <i class="fa-regular fa-trash-can"></i>
+      <span class="name">{{ cartItem.design.name }}</span>
+      <i
+        id="deleteItem"
+        class="delete fa-regular fa-trash-can"
+        (click)="deleteItem()"
+      ></i>
     </div>
-    <div class="size">Veličina: M</div>
-    <div class="price">Cena: 1990RSD</div>
+    <div class="size">Veličina: {{ cartItem.size }}</div>
+    <div class="price">
+      Cena: {{ cartItem.design.price | currency : "" : "" : "1.0-0" }}RSD
+    </div>
     <div class="quantity">
       <div class="quantity-input">
-        <div class="quantity-button">-</div>
-        <input value="1" type="number" name="quantity" id="quantity" />
-        <div class="quantity-button">+</div>
+        <div class="quantity-button" (click)="decreaseQuantity()">-</div>
+        <input
+          [value]="cartItem.quantity"
+          disabled
+          type="number"
+          min="1"
+          max="99"
+          name="quantity"
+          id="quantity"
+        />
+        <div class="quantity-button" (click)="increaseQuantity()">+</div>
       </div>
-      <span class="total">1990RSD</span>
+      <span class="total"
+        >{{
+          cartItem.quantity * cartItem.design.price
+            | currency : "" : "" : "1.0-0"
+        }}RSD</span
+      >
     </div>
   </div>
 </div>

@@ -47,6 +47,7 @@
   justify-content: center;
   align-items: center;
   font-family: var(--ff-secondary);
+  user-select: none;
 }
 
 .quantity-input input {
@@ -74,5 +75,9 @@
 }
 
 .quantity-button:hover {
+  cursor: pointer;
+}
+
+.delete:hover {
   cursor: pointer;
 }
