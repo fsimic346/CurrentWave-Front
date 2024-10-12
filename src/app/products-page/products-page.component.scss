@@ -8,8 +8,6 @@
 .filter {
   display: flex;
   padding: 0.5rem;
-  //   border: 2px solid var(--clr-primary);
-  background: var(--gradient-primary);
   border-radius: 1rem;
   height: 30rem;
   width: 15rem;
@@ -17,7 +15,7 @@
 
 .title {
   font-size: var(--fs-900);
-  background: var(--gradient-primary);
+  background: black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -42,9 +40,26 @@
   align-items: end;
 }
 
+.sort {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.select {
+  width: 6rem;
+  height: 1.5rem;
+  margin-bottom: 1rem;
+  background: black;
+  border: none;
+  border-radius: 5px;
+  font-size: var(--fs-400);
+  color: var(--white-primary);
+}
+
 .text {
-  font-size: var(--fs-600);
-  background: var(--gradient-primary);
+  font-size: var(--fs-400);
+  background: black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,4 +68,18 @@
   width: max-content;
   margin: 0;
   margin-bottom: 1rem;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-title {
+  padding-block: 0.5rem;
+  font-size: var(--fs-600);
+}
+
+.filter .line {
+  margin-top: 0.5rem;
 }

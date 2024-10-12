@@ -3,9 +3,47 @@
     <div class="title">Svi proizvodi</div>
     <div class="sort">
       <div class="text">Sortiraj prema:</div>
-      <div class="select"></div>
+      <select class="select" id="sortSelect">
+        <option value="new">Novije</option>
+        <option value="old">Starije</option>
+        <option value="price-higher">Visoj ceni</option>
+        <option value="price-lower">Nizoj ceni</option>
+      </select>
     </div>
   </div>
   <div class="line"></div>
-  <div class="filter"></div>
+  <div class="filter">
+    <div class="filter-title">Tip</div>
+    <div>
+      <input type="checkbox" id="anime" name="tip" value="anime" />
+      <label for="anime">Anime</label>
+    </div>
+    <div>
+      <input type="checkbox" id="rap" name="tip" value="rap" />
+      <label for="rap">Rap</label>
+    </div>
+    <div class="line"></div>
+    <div class="filter-title">Kategorija</div>
+    <div>
+      <input type="checkbox" id="duks" name="kategorija" value="duks" />
+      <label for="duks">Duks</label>
+    </div>
+    <div>
+      <input type="checkbox" id="majica" name="kategorija" value="majica" />
+      <label for="majica">Majica</label>
+    </div>
+    <div class="line"></div>
+    <div class="filter-title">Cena</div>
+    <div>
+      <input
+        type="range"
+        id="cena"
+        name="cena"
+        min="0"
+        max="1000"
+        value="500"
+      />
+    </div>
+    <div class="line"></div>
+  </div>
 </div>
