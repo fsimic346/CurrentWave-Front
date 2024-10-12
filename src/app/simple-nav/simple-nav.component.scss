@@ -148,6 +148,10 @@
   height: 3rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 800px) {
   .hamburger-bar {
     display: flex;

@@ -5,12 +5,13 @@ import { DesignService } from '../design.service';
 import { CartService } from '../cart.service';
 import { CartItem } from '../../models/cartItem';
 import { CommonModule } from '@angular/common';
-import { HomeCardComponent } from "../home-card/home-card.component";
+import { HomeCardComponent } from '../home-card/home-card.component';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'cw-design',
   standalone: true,
-  imports: [CommonModule, HomeCardComponent],
+  imports: [CommonModule, HomeCardComponent, ButtonComponent],
   templateUrl: './design.component.html',
   styleUrl: './design.component.scss',
 })
@@ -19,7 +20,7 @@ export class DesignComponent implements OnInit {
   selectedImage: any;
   sizes: string[] = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   selectedSize: string = this.sizes[0];
-  id:string=''
+  id: string = '';
   route: ActivatedRoute = inject(ActivatedRoute);
   designService: DesignService = inject(DesignService);
   cartService: CartService = inject(CartService);
@@ -44,31 +45,17 @@ export class DesignComponent implements OnInit {
       .catch((error) => {
         console.error('Error fetching design:', error);
       });
-      
   }
 
   async loadDesigns(): Promise<void> {
-    if (this.design!.type === 'Majica') {
-      const shirts = await this.designService.getDesigns({
-        count: 5,
-        type: 'Majica',
-        // category: this.design!.category.toLowerCase(),
-      });
-  
-      this.shirtDesigns = shirts.filter(shirt => shirt.id !== this.id);
-    }
-  
-    if (this.design!.type === 'Duks') {
-      const hoodies = await this.designService.getDesigns({
-        count: 5,
-        type: 'Duks',
-        // category: this.design!.category.toLowerCase(),
-      });
-  
-      this.hoodieDesigns = hoodies.filter(hoodie => hoodie.id !== this.id);
-    }
+    const shirts = await this.designService.getDesigns({
+      count: 5,
+      type: this.design!.type,
+      // category: this.design!.category.toLowerCase(),
+    });
+
+    this.shirtDesigns = shirts.filter((shirt) => shirt.id !== this.id);
   }
-  
 
   onContentRendered() {
     setTimeout(() => {

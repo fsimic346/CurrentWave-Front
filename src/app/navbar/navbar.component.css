@@ -422,6 +422,10 @@
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 370px) {
   .image {
     max-width: 25rem;

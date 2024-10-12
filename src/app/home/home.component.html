@@ -24,7 +24,7 @@
   <h2 class="subtitle">Duksevi</h2>
   <div class="grid">
     <cw-home-card
-      *ngFor="let design of shirtDesigns; let last = last; trackBy: identify"
+      *ngFor="let design of hoodieDesigns; let last = last; trackBy: identify"
       [design]="design"
     >
       <ng-container *ngIf="last && !contentRendered">{{
