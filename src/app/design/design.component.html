@@ -47,7 +47,9 @@
           [class.active]="size === selectedSize"
           (click)="selectSize(size)"
         >
-          {{ size }}
+          <span class="size-text">
+            {{ size }}
+          </span>
         </div>
       </div>
       <cw-button

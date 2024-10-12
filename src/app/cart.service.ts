@@ -26,6 +26,7 @@ export class CartService {
   openCart() {
     this.cart.update((currentCart) => {
       currentCart.isVisible = true;
+      this.saveCartToStorage(currentCart);
       return currentCart;
     });
   }
@@ -33,6 +34,7 @@ export class CartService {
   closeCart() {
     this.cart.update((currentCart) => {
       currentCart.isVisible = false;
+      this.saveCartToStorage(currentCart);
       return currentCart;
     });
   }
