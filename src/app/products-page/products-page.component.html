@@ -16,40 +16,28 @@
     <div class="filter">
       <div class="filter-title">Tip</div>
       <div class="filter-tools">
-        <label for="anime">Anime</label>
-        <input type="checkbox" id="anime" name="tip" value="anime" />
+        <label for="anime">Majica</label>
+        <input type="checkbox" (change)="toggleType('Majica')" />
       </div>
       <div class="filter-tools">
-        <label for="rap">Rap</label>
-        <input type="checkbox" id="rap" name="tip" value="rap" />
+        <label>Duks</label>
+        <input type="checkbox" (change)="toggleType('Duks')" />
       </div>
       <div class="line"></div>
       <div class="filter-title">Kategorija</div>
       <div class="filter-tools">
-        <label for="duks">Duks</label>
-        <input type="checkbox" id="duks" name="kategorija" value="duks" />
+        <label>Anime</label>
+        <input type="checkbox" (change)="toggleCategory('Anime')" />
       </div>
       <div class="filter-tools">
-        <label for="majica">Majica</label>
-        <input type="checkbox" id="majica" name="kategorija" value="majica" />
+        <label>Rap</label>
+        <input type="checkbox" (change)="toggleCategory('Rap')" />
       </div>
       <div class="line"></div>
-      <!-- <div class="filter-title">Cena</div>
-    <div>
-      <input
-        type="range"
-        id="cena"
-        name="cena"
-        min="0"
-        max="1000"
-        value="500"
-      />
-    </div>
-    <div class="line"></div> -->
     </div>
     <div class="grid">
       <cw-product-card
-        *ngFor="let design of shirtDesigns"
+        *ngFor="let design of filteredDesigns"
         [design]="design"
         class="card"
       >

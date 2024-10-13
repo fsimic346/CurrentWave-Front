@@ -47,17 +47,22 @@
 }
 
 .select {
-  width: 6rem;
-  height: 1.5rem;
+  width: 6.2rem;
+  height: 1.7rem;
   margin-bottom: 1rem;
   background: black;
   border: none;
   border-radius: 5px;
   font-size: var(--fs-400);
   color: var(--white-primary);
+  font-family: var(--ff-secondary);
+  font-weight: 400;
+  text-align: center;
 }
 
 .text {
+  font-family: var(--ff-secondary);
+  font-weight: 600;
   font-size: var(--fs-400);
   background: black;
   -webkit-background-clip: text;
@@ -78,6 +83,9 @@
 .filter-title {
   padding-block: 0.5rem;
   font-size: var(--fs-700);
+  font-family: var(--ff-secondary);
+  font-weight: 700;
+  color: var(--gradient-primary);
 }
 
 .filter .line {
@@ -87,6 +95,8 @@
 .filter-tools {
   display: flex;
   justify-content: space-between;
+  font-family: var(--ff-secondary);
+  font-weight: 400;
 }
 
 .second-row {
@@ -100,5 +110,5 @@
   padding-top: 0.5rem;
   padding-inline: 1rem;
   justify-content: start;
-  align-items: center;
+  align-items: start;
 }

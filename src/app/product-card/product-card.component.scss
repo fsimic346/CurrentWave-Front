@@ -35,6 +35,7 @@
   align-items: center;
   padding-block: 0.5rem;
   cursor: pointer;
+  font-family: var(--ff-secondary);
 }
 
 .price {
@@ -42,6 +43,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-family: var(--ff-secondary);
+  font-weight: 600;
 }
 
 .image-wrapper:hover ~ .title,
