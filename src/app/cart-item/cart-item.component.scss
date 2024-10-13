@@ -17,6 +17,7 @@
 }
 
 .title {
+  font-size: var(--fs-400);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,6 +33,7 @@
 
 .price,
 .size {
+  font-size: var(--fs-400);
   font-family: var(--ff-secondary);
 }
 
@@ -40,6 +42,8 @@
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  flex-wrap: wrap;
+  font-size: var(--fs-400);
 }
 
 .quantity-input {

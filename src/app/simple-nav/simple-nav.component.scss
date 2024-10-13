@@ -132,11 +132,31 @@
   padding-inline: 1rem;
 }
 
-.hamburger-button {
-  background: var(--white-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.line {
+  background-color: var(--white-primary);
+  width: 20px;
+  height: 2px;
+  display: block;
+  margin: 4px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-button.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(6px) rotate(45deg);
+  -ms-transform: translateY(6px) rotate(45deg);
+  -o-transform: translateY(6px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-button.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+  -ms-transform: translateY(-6px) rotate(-45deg);
+  -o-transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .logo-hamburger {
@@ -150,13 +170,121 @@
   height: 3rem;
 }
 
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 8;
+  display: none;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  height: 100vh;
+  width: 80%;
+  background: var(--white-primary);
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, opacity 0.2s linear;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.mobile-menu.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.menu-item {
+  position: relative;
+  font-family: var(--ff-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.menu-item::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--gradient-secondary);
+  z-index: 1;
+  transition: opacity 0.2s linear;
+  opacity: 0;
+  user-select: none;
+}
+
+.menu-item:hover::before {
+  opacity: 1;
+}
+
+.menu-item:hover {
+  color: white;
+
+  i {
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.menu-item i {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  z-index: 2;
+  transition: 0.2s linear;
+}
+
+.menu-item span {
+  z-index: 2;
+}
+
 a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
   .container {
     background: none;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+  .menu-overlay {
+    display: block;
   }
 
   .hamburger-bar {
