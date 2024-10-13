@@ -1,0 +1,30 @@
+.loader {
+  border-radius: 0.8rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-card {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  width: 15rem;
+  height: 15rem;
+  transition: transform 0.3s ease;
+  border: none;
+}
+
+.image-wrapper {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.image-wrapper:hover .main-card {
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}

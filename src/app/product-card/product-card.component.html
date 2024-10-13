@@ -1,0 +1,11 @@
+<div class="image-wrapper" (click)="showDesign()">
+  <img
+    class="main-card"
+    loading="lazy"
+    [src]="design.image"
+    (load)="onImageLoad()"
+  />
+</div>
+<div *ngIf="!imageLoaded" class="loader">
+  <img src="assets/current-wave-skeleton.svg" alt="Loading..." />
+</div>

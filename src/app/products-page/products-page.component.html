@@ -12,28 +12,29 @@
     </div>
   </div>
   <div class="line"></div>
-  <div class="filter">
-    <div class="filter-title">Tip</div>
-    <div>
-      <input type="checkbox" id="anime" name="tip" value="anime" />
-      <label for="anime">Anime</label>
-    </div>
-    <div>
-      <input type="checkbox" id="rap" name="tip" value="rap" />
-      <label for="rap">Rap</label>
-    </div>
-    <div class="line"></div>
-    <div class="filter-title">Kategorija</div>
-    <div>
-      <input type="checkbox" id="duks" name="kategorija" value="duks" />
-      <label for="duks">Duks</label>
-    </div>
-    <div>
-      <input type="checkbox" id="majica" name="kategorija" value="majica" />
-      <label for="majica">Majica</label>
-    </div>
-    <div class="line"></div>
-    <div class="filter-title">Cena</div>
+  <div class="second-row">
+    <div class="filter">
+      <div class="filter-title">Tip</div>
+      <div class="filter-tools">
+        <label for="anime">Anime</label>
+        <input type="checkbox" id="anime" name="tip" value="anime" />
+      </div>
+      <div class="filter-tools">
+        <label for="rap">Rap</label>
+        <input type="checkbox" id="rap" name="tip" value="rap" />
+      </div>
+      <div class="line"></div>
+      <div class="filter-title">Kategorija</div>
+      <div class="filter-tools">
+        <label for="duks">Duks</label>
+        <input type="checkbox" id="duks" name="kategorija" value="duks" />
+      </div>
+      <div class="filter-tools">
+        <label for="majica">Majica</label>
+        <input type="checkbox" id="majica" name="kategorija" value="majica" />
+      </div>
+      <div class="line"></div>
+      <!-- <div class="filter-title">Cena</div>
     <div>
       <input
         type="range"
@@ -44,6 +45,15 @@
         value="500"
       />
     </div>
-    <div class="line"></div>
+    <div class="line"></div> -->
+    </div>
+    <div class="grid">
+      <cw-product-card
+        *ngFor="let design of shirtDesigns"
+        [design]="design"
+        class="card"
+      >
+      </cw-product-card>
+    </div>
   </div>
 </div>
