@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class ProductsPageComponent implements OnInit {
   shirtDesigns: Design[] = [];
   filteredDesigns: Design[] = [];
+  selectedSort: string = 'new';
 
   selectedTypes: Set<string> = new Set();
   selectedCategories: Set<string> = new Set();
@@ -24,11 +25,11 @@ export class ProductsPageComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.loadDesigns();
     this.filteredDesigns = this.shirtDesigns;
-    console.log(this.shirtDesigns[0]);
   }
 
   async loadDesigns(): Promise<void> {
     this.shirtDesigns = await this.designService.getDesigns({});
+    this.filterAndSortDesigns();
   }
 
   toggleType(type: string): void {
@@ -37,7 +38,7 @@ export class ProductsPageComponent implements OnInit {
     } else {
       this.selectedTypes.add(type);
     }
-    this.filterDesigns();
+    this.filterAndSortDesigns();
   }
 
   toggleCategory(category: string): void {
@@ -46,10 +47,16 @@ export class ProductsPageComponent implements OnInit {
     } else {
       this.selectedCategories.add(category);
     }
-    this.filterDesigns();
+    this.filterAndSortDesigns();
   }
 
-  filterDesigns(): void {
+  onSortChange(event: Event): void {
+    const select = event.target as HTMLSelectElement;
+    this.selectedSort = select.value;
+    this.filterAndSortDesigns();
+  }
+
+  filterAndSortDesigns(): void {
     this.filteredDesigns = this.shirtDesigns.filter((design) => {
       const matchesType =
         this.selectedTypes.size === 0 || this.selectedTypes.has(design.type);
@@ -57,6 +64,25 @@ export class ProductsPageComponent implements OnInit {
         this.selectedCategories.size === 0 ||
         this.selectedCategories.has(design.category);
       return matchesType && matchesCategory;
+    });
+
+    this.filteredDesigns.sort((a, b) => {
+      switch (this.selectedSort) {
+        case 'new':
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+        case 'old':
+          return (
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          );
+        case 'price-higher':
+          return b.price - a.price;
+        case 'price-lower':
+          return a.price - b.price;
+        default:
+          return 0;
+      }
     });
   }
 }

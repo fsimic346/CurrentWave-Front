@@ -3,7 +3,7 @@
     <div class="title">Svi proizvodi</div>
     <div class="sort">
       <div class="text">Sortiraj prema:</div>
-      <select class="select" id="sortSelect">
+      <select class="select" id="sortSelect" (change)="onSortChange($event)">
         <option value="new">Novije</option>
         <option value="old">Starije</option>
         <option value="price-higher">Visoj ceni</option>
@@ -16,22 +16,22 @@
     <div class="filter">
       <div class="filter-title">Tip</div>
       <div class="filter-tools">
-        <label for="anime">Majica</label>
-        <input type="checkbox" (change)="toggleType('Majica')" />
+        <label for="majica">Majica</label>
+        <input type="checkbox" id="majica" (change)="toggleType('Majica')" />
       </div>
       <div class="filter-tools">
-        <label>Duks</label>
-        <input type="checkbox" (change)="toggleType('Duks')" />
+        <label for="duks">Duks</label>
+        <input type="checkbox" id="duks" (change)="toggleType('Duks')" />
       </div>
       <div class="line"></div>
       <div class="filter-title">Kategorija</div>
       <div class="filter-tools">
-        <label>Anime</label>
-        <input type="checkbox" (change)="toggleCategory('Anime')" />
+        <label for="anime">Anime</label>
+        <input type="checkbox" id="anime" (change)="toggleCategory('Anime')" />
       </div>
       <div class="filter-tools">
-        <label>Rap</label>
-        <input type="checkbox" (change)="toggleCategory('Rap')" />
+        <label for="rap">Rap</label>
+        <input type="checkbox" id="rap" (change)="toggleCategory('Rap')" />
       </div>
       <div class="line"></div>
     </div>
