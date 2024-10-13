@@ -9,3 +9,5 @@
 <div *ngIf="!imageLoaded" class="loader">
   <img src="assets/current-wave-skeleton.svg" alt="Loading..." />
 </div>
+<div class="title" (click)="showDesign()">{{ design.name }}</div>
+<div class="price" (click)="showDesign()">{{ design.price }}.00 RSD</div>
