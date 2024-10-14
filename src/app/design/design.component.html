@@ -14,21 +14,21 @@
           [class.selected]="selectedImage === design?.image"
           (click)="showImage(design?.image)"
         >
-          <img [src]="design?.image" />
+          <img [src]="design?.image" alt="{{ design?.name }}" />
         </div>
         <div
           class="thumbnail"
           [class.selected]="selectedImage === design?.front"
           (click)="showImage(design?.front)"
         >
-          <img [src]="design?.front" />
+          <img [src]="design?.front" alt="{{ design?.name }}" />
         </div>
         <div
           class="thumbnail"
           [class.selected]="selectedImage === design?.back"
           (click)="showImage(design?.back)"
         >
-          <img [src]="design?.back" />
+          <img [src]="design?.back" alt="{{ design?.name }}" />
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="white-bar">
     <div class="logo">
-      <a href="/">
-        <img src="assets/current-wave-gradient.svg" />
+      <a routerLink="/">
+        <img src="assets/current-wave-gradient.svg" alt="logo" />
       </a>
     </div>
     <div class="title">
-      <a href="/"> CURRENT WAVE</a>
+      <a routerLink="/"> CURRENT WAVE</a>
     </div>
     <div class="cart">
       <div id="openCart" class="cart-button" (click)="openCart()">
@@ -16,14 +16,43 @@
   </div>
 
   <div class="hamburger-bar">
-    <div class="hamburger-button">
-      <i class="fas fa-bars cart-icon"></i>
+    <div
+      class="hamburger-button"
+      [class.is-active]="isHamburgerOpen"
+      (click)="toggleHamburger()"
+    >
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
     </div>
-    <div class="logo-hamburger">
-      <a href="/">
-        <img src="assets/current-wave-white.svg" />
-      </a>
-    </div>
+    <a routerLink="/" class="logo-hamburger">
+      <img src="assets/current-wave-white.svg" alt="logo" />
+    </a>
     <div></div>
   </div>
+  <div
+    id="menu-overlay"
+    class="menu-overlay"
+    [class.show]="isHamburgerOpen"
+    (click)="toggleHamburger()"
+  ></div>
+  <nav id="mobile-menu" class="mobile-menu" [class.show]="isHamburgerOpen">
+    <ul>
+      <li>
+        <a routerLink="/" class="menu-item">
+          <i class="fas fa-house"></i><span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/products" class="menu-item">
+          <i class="fas fa-shirt"></i><span>Kolekcija</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cart" class="menu-item">
+          <i class="fas fa-basket-shopping"></i><span>Korpa</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

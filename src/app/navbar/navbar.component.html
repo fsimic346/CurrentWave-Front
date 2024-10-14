@@ -3,12 +3,12 @@
 
   <div class="white-bar">
     <div class="logo">
-      <a href="/">
-        <img src="assets/current-wave-gradient.svg" />
+      <a routerLink="/">
+        <img src="assets/current-wave-gradient.svg" alt="logo" />
       </a>
     </div>
     <div class="title">
-      <a href="/"> CURRENT WAVE</a>
+      <a routerLink="/"> CURRENT WAVE</a>
     </div>
     <div class="cart">
       <div id="openCart" class="cart-button" (click)="openCart()">
@@ -18,17 +18,52 @@
   </div>
 
   <div class="hamburger-bar">
-    <div class="hamburger-button">
-      <i class="fas fa-bars cart-icon"></i>
+    <div
+      class="hamburger-button"
+      [class.is-active]="isHamburgerOpen"
+      (click)="toggleHamburger()"
+    >
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
     </div>
     <div class="logo-hamburger">
-      <img src="assets/current-wave-white.svg" />
+      <img src="assets/current-wave-white.svg" alt="logo" />
     </div>
     <div></div>
   </div>
+  <div
+    id="menu-overlay"
+    class="menu-overlay"
+    [class.show]="isHamburgerOpen"
+    (click)="toggleHamburger()"
+  ></div>
+  <nav id="mobile-menu" class="mobile-menu" [class.show]="isHamburgerOpen">
+    <ul>
+      <li>
+        <a routerLink="/" class="menu-item">
+          <i class="fas fa-house"></i><span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/products" class="menu-item">
+          <i class="fas fa-shirt"></i><span>Kolekcija</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cart" class="menu-item">
+          <i class="fas fa-basket-shopping"></i><span>Korpa</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <div class="content">
-    <img src="assets/current-wave-white.svg" class="logo-secondary" />
+    <img
+      src="assets/current-wave-white.svg"
+      class="logo-secondary"
+      alt="logo"
+    />
     <div class="slogan">Pridruži se talasu.</div>
   </div>
 
@@ -38,7 +73,7 @@
 
   <div class="left-image-wrapper wrapper-position">
     <img
-      src="assets/apparel/cench.png"
+      src="assets/apparel/cench.webp"
       alt="Kendrick"
       class="left-image tshirt image"
       [ngClass]="{ show: isAnimationTriggered }"
@@ -47,7 +82,7 @@
 
   <div class="left-image-wrapper-2 wrapper-position">
     <img
-      src="assets/apparel/kendrick.png"
+      src="assets/apparel/kendrick.webp"
       alt="Kendrick"
       class="left-image-2 tshirt image"
       [ngClass]="{ show: isAnimationTriggered }"
@@ -56,7 +91,7 @@
 
   <div class="right-image-wrapper wrapper-position">
     <img
-      src="assets/apparel/gojo.png"
+      src="assets/apparel/gojo.webp"
       alt="Kendrick"
       class="right-image tshirt image"
       [ngClass]="{ show: isAnimationTriggered }"
@@ -65,7 +100,7 @@
 
   <div class="right-image-wrapper-2 wrapper-position">
     <img
-      src="assets/apparel/travis.png"
+      src="assets/apparel/travis.webp"
       alt="Kendrick"
       class="right-image-2 tshirt image"
       [ngClass]="{ show: isAnimationTriggered }"

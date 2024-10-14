@@ -10,6 +10,7 @@ import { ButtonComponent } from '../button/button.component';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 import { CommonModule } from '@angular/common';
 import { SHIPPING_COST } from '../consts';
+import { Router } from '@angular/router';
 @Component({
   selector: 'cw-cart-sidebar',
   standalone: true,
@@ -20,12 +21,18 @@ import { SHIPPING_COST } from '../consts';
 export class CartSidebarComponent {
   cartService: CartService = inject(CartService);
   elRef: ElementRef = inject(ElementRef);
+  router = inject(Router);
 
   cart = this.cartService.cart;
 
   SHIPPING_COST = this.cart().items.length > 0 ? SHIPPING_COST : 0;
   closeCart() {
     this.cartService.closeCart();
+  }
+
+  goToCart() {
+    this.cartService.closeCart();
+    this.router.navigateByUrl('/cart');
   }
 
   @HostListener('document:click', ['$event'])
