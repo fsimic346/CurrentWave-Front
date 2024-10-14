@@ -1,47 +1,60 @@
 <div class="container">
   <div class="first-row">
-    <div class="title">Svi proizvodi</div>
-    <div class="sort">
-      <div class="text">Sortiraj prema:</div>
-      <select class="select" id="sortSelect" (change)="onSortChange($event)">
-        <option value="new">Novije</option>
-        <option value="old">Starije</option>
-        <option value="price-higher">Visoj ceni</option>
-        <option value="price-lower">Nizoj ceni</option>
-      </select>
+    <div class="info">
+      <div class="title">Svi proizvodi</div>
+      <div class="sort">
+        <div class="text">Sortiraj prema:</div>
+        <select class="select" id="sortSelect" (change)="onSortChange($event)">
+          <option value="new">Novije</option>
+          <option value="old">Starije</option>
+          <option value="price-higher">Visoj ceni</option>
+          <option value="price-lower">Nizoj ceni</option>
+        </select>
+      </div>
     </div>
+    <div class="main-line"></div>
   </div>
-  <div class="line"></div>
+
   <div class="second-row">
     <div class="filter">
-      <div class="filter-title">Tip</div>
-      <div class="filter-tools">
-        <label for="majica">Majica</label>
-        <input type="checkbox" id="majica" (change)="toggleType('Majica')" />
+      <div class="filter-type">
+        <div class="filter-title">Tip</div>
+        <div class="filter-tools">
+          <label for="majica">Majica</label>
+          <input type="checkbox" id="majica" (change)="toggleType('Majica')" />
+        </div>
+        <div class="filter-tools">
+          <label for="duks">Duks</label>
+          <input type="checkbox" id="duks" (change)="toggleType('Duks')" />
+        </div>
+        <div class="line"></div>
       </div>
-      <div class="filter-tools">
-        <label for="duks">Duks</label>
-        <input type="checkbox" id="duks" (change)="toggleType('Duks')" />
+      <div class="filter-category">
+        <div class="filter-title">Kategorija</div>
+        <div class="filter-tools">
+          <label for="anime">Anime</label>
+          <input
+            type="checkbox"
+            id="anime"
+            (change)="toggleCategory('Anime')"
+          />
+        </div>
+        <div class="filter-tools">
+          <label for="rap">Rap</label>
+          <input type="checkbox" id="rap" (change)="toggleCategory('Rap')" />
+        </div>
+        <div class="line"></div>
       </div>
-      <div class="line"></div>
-      <div class="filter-title">Kategorija</div>
-      <div class="filter-tools">
-        <label for="anime">Anime</label>
-        <input type="checkbox" id="anime" (change)="toggleCategory('Anime')" />
-      </div>
-      <div class="filter-tools">
-        <label for="rap">Rap</label>
-        <input type="checkbox" id="rap" (change)="toggleCategory('Rap')" />
-      </div>
-      <div class="line"></div>
     </div>
-    <div class="grid">
-      <cw-product-card
-        *ngFor="let design of filteredDesigns"
-        [design]="design"
-        class="card"
-      >
-      </cw-product-card>
+    <div class="grid-wrapper">
+      <div class="grid">
+        <cw-product-card
+          *ngFor="let design of filteredDesigns"
+          [design]="design"
+          class="card"
+        >
+        </cw-product-card>
+      </div>
     </div>
   </div>
 </div>

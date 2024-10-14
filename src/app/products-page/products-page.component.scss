@@ -2,14 +2,16 @@
   display: flex;
   padding-block: 1rem;
   flex-direction: column;
-  padding-inline: 20rem;
+  padding-inline: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter {
   display: flex;
+  flex-direction: column;
   padding: 0.5rem;
   border-radius: 1rem;
-  min-height: 30rem;
   min-width: 15rem;
 }
 
@@ -28,16 +30,32 @@
 
 .line {
   height: 2px;
-  width: 100%;
   background: var(--gradient-primary);
   margin-bottom: 1rem;
-  //   border-radius: 30%;
 }
 
-.first-row {
+.main-line {
+  height: 2px;
+  background: var(--gradient-primary);
+  margin-bottom: 1rem;
+}
+
+.first-row,
+.second-row {
+  width: 100%;
+  max-width: 80rem;
+  // padding: 0 1rem;
+}
+
+.info {
   display: flex;
   justify-content: space-between;
   align-items: end;
+}
+
+.second-row {
+  display: flex;
+  justify-content: space-between;
 }
 
 .sort {
@@ -75,11 +93,6 @@
   margin-bottom: 1rem;
 }
 
-.filter {
-  display: flex;
-  flex-direction: column;
-}
-
 .filter-title {
   padding-block: 0.5rem;
   font-size: var(--fs-700);
@@ -99,16 +112,36 @@
   font-weight: 400;
 }
 
-.second-row {
+.grid-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding-top: 0.5rem;
-  padding-inline: 1rem;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1410px) {
+  .filter {
+    min-width: 20%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .second-row {
+    flex-direction: column;
+  }
+  .info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid {
+    justify-content: center;
+  }
 }
