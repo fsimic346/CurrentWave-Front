@@ -44,7 +44,6 @@
 .second-row {
   width: 100%;
   max-width: 80rem;
-  // padding: 0 1rem;
 }
 
 .info {
@@ -55,7 +54,6 @@
 
 .second-row {
   display: flex;
-  justify-content: space-between;
 }
 
 .sort {
@@ -143,5 +141,32 @@
   }
   .grid {
     justify-content: center;
+  }
+  .filter {
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .filter-type {
+    width: 10rem;
+  }
+  .filter-category {
+    width: 10rem;
+  }
+  .second-row {
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    display: none;
+  }
+  .title {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: var(--fs-900);
+    font-weight: bold;
   }
 }
